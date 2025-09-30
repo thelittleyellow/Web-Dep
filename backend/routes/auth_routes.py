@@ -2,18 +2,10 @@ from fastapi import APIRouter, HTTPException, Depends
 from motor.motor_asyncio import AsyncIOMotorDatabase
 from models import UserCreate, UserRegistrationResponse
 from auth import AuthService
-import os
-from motor.motor_asyncio import AsyncIOMotorClient
-
-# Database connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
 
 auth_router = APIRouter(prefix="/auth", tags=["authentication"])
 
-# Initialize auth service
-auth_service = AuthService(db.users)
+# We'll initialize auth_service in the main server.py to avoid duplicate DB connections
 
 @auth_router.post("/register", response_model=UserRegistrationResponse)
 async def register_user(user_data: UserCreate):
