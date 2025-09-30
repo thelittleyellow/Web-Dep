@@ -54,6 +54,10 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
+# Initialize auth service and setup routes
+auth_service = AuthService(db.users)
+setup_auth_routes(auth_service, db)
+
 # Include auth routes
 api_router.include_router(auth_router)
 
