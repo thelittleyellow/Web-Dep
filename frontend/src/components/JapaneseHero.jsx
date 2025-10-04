@@ -60,7 +60,10 @@ const JapaneseHero = () => {
                 
                 {/* CTA Button */}
                 <div className="pt-4">
-                  <Button className="group bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] flex items-center space-x-2">
+                  <Button 
+                    onClick={() => window.location.href = '/signup'}
+                    className="group bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] flex items-center space-x-2 cursor-pointer"
+                  >
                     <span className="text-lg">Get Started</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                   </Button>
