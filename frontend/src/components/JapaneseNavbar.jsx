@@ -9,9 +9,9 @@ const JapaneseNavbar = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-r from-red-400 to-pink-400 flex items-center justify-center">
-              <span className="text-white font-bold text-lg">文</span>
+              <span className="text-white font-bold text-lg">東</span>
             </div>
-            <span className="text-gray-800 font-semibold text-lg hidden md:block">Culture</span>
+            <span className="text-gray-800 font-semibold text-lg hidden md:block">Touhou</span>
           </div>
 
           {/* Navigation Menu */}
