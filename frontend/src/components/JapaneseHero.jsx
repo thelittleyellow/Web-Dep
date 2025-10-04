@@ -38,24 +38,24 @@ const JapaneseHero = () => {
               <div className="space-y-6">
                 {/* Badge */}
                 <div className="inline-flex items-center space-x-2 px-4 py-2 bg-red-100/50 rounded-full border border-red-200/30">
-                  <Cherry className="w-4 h-4 text-red-600" />
-                  <span className="text-red-700 text-sm font-medium">Discover Japanese Culture</span>
+                  <Sparkles className="w-4 h-4 text-red-600" />
+                  <span className="text-red-700 text-sm font-medium">Enter Gensokyo</span>
                 </div>
                 
                 {/* Main Title */}
                 <h1 className="text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
                   <span className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
-                    Japanese
+                    Touhou
                   </span>
                   <br />
-                  <span className="text-gray-700">Culture</span>
+                  <span className="text-gray-700">Project</span>
                 </h1>
                 
                 {/* Subtitle */}
                 <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-                  Explore the beauty, traditions, and timeless elegance of Japan. 
-                  Discover ancient wisdom, modern aesthetics, and cultural treasures 
-                  that have inspired the world for centuries.
+                  Dive into the mystical world of Gensokyo, where humans and youkai coexist. 
+                  Experience epic bullet hell battles, enchanting music, and unforgettable characters 
+                  in this legendary doujin game series by Team Shanghai Alice.
                 </p>
                 
                 {/* CTA Button */}
