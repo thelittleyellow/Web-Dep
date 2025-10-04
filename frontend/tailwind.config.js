@@ -52,7 +52,19 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			// Japanese Culture Colors
+  			japanese: {
+  				red: '#C0392B',
+  				blue: '#34495E',
+  				pink: '#F45B69',
+  				cream: '#FFE0B2',
+  				cherry: '#E74C3C'
   			}
+  		},
+  		fontFamily: {
+  			'poppins': ['Poppins', 'sans-serif'],
+  			'fredoka': ['Fredoka One', 'cursive']
   		},
   		keyframes: {
   			'accordion-down': {
@@ -70,11 +82,29 @@ module.exports = {
   				to: {
   					height: '0'
   				}
+  			},
+  			'float': {
+  				'0%, 100%': {
+  					transform: 'translateY(0px)'
+  				},
+  				'50%': {
+  					transform: 'translateY(-10px)'
+  				}
+  			},
+  			'pulse-soft': {
+  				'0%, 100%': {
+  					opacity: '0.6'
+  				},
+  				'50%': {
+  					opacity: '1'
+  				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'float': 'float 3s ease-in-out infinite',
+  			'pulse-soft': 'pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
   		}
   	}
   },
