@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SignUpForm from './components/SignUpForm';
+import JapaneseCulturePage from './pages/JapaneseCulturePage';
 import { Toaster } from './components/ui/toaster';
 import './App.css';
 
-const HomePage = () => {
+const SignUpPage = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image with Overlay */}
@@ -55,9 +56,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<JapaneseCulturePage />} />
+          <Route path="/signup" element={<SignUpPage />} />
         </Routes>
       </BrowserRouter>
+      <Toaster />
     </div>
   );
 }
