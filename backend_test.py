@@ -129,7 +129,7 @@ class TouhouAPITester:
                         if character["_id"] == char_id:
                             self.log_result(f"Character {char_id}", True, f"Character data complete and correct")
                         else:
-                            self.log_result(f"Character {char_id}", False, f"ID mismatch: expected {char_id}, got {character.get('id')}")
+                            self.log_result(f"Character {char_id}", False, f"ID mismatch: expected {char_id}, got {character.get('_id')}")
                             all_passed = False
                     else:
                         self.log_result(f"Character {char_id}", False, f"Missing fields: {missing_fields}", character)
