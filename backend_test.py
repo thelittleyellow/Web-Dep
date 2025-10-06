@@ -86,8 +86,8 @@ class TouhouAPITester:
             if response.status_code == 200:
                 characters = response.json()
                 if len(characters) == 5:
-                    # Check if all expected characters are present
-                    character_ids = [char.get("id") for char in characters]
+                    # Check if all expected characters are present (using _id field from MongoDB)
+                    character_ids = [char.get("_id") or char.get("id") for char in characters]
                     missing_chars = [char_id for char_id in EXPECTED_CHARACTERS if char_id not in character_ids]
                     
                     if not missing_chars:
