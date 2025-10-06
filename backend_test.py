@@ -126,7 +126,7 @@ class TouhouAPITester:
                     
                     missing_fields = [field for field in required_fields if field not in character]
                     if not missing_fields:
-                        if character["id"] == char_id:
+                        if character["_id"] == char_id:
                             self.log_result(f"Character {char_id}", True, f"Character data complete and correct")
                         else:
                             self.log_result(f"Character {char_id}", False, f"ID mismatch: expected {char_id}, got {character.get('id')}")
