@@ -149,15 +149,18 @@ backend:
 
   - task: "User profile endpoint"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "GET /api/profile with JWT authentication implemented"
+      - working: true
+        agent: "testing"
+        comment: "TESTED: Profile endpoint working with valid JWT tokens, returns complete user data (_id, email, username, created_at). Properly rejects requests without tokens (403) and invalid tokens (401). JWT authentication middleware working correctly."
 
 frontend:
   - task: "Home page with character showcase"
