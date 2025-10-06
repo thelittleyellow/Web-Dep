@@ -254,7 +254,7 @@ class TouhouAPITester:
             response = self.session.get(f"{API_BASE}/profile", headers=headers)
             if response.status_code == 200:
                 user = response.json()
-                required_fields = ["id", "email", "username", "created_at"]
+                required_fields = ["_id", "email", "username", "created_at"]
                 missing_fields = [field for field in required_fields if field not in user]
                 
                 if not missing_fields:
