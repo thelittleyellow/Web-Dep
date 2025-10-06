@@ -462,7 +462,7 @@ const LoginPage = ({ onBack }) => {
   );
 };
 
-const App = () => {
+const AppContent = () => {
   const [currentPage, setCurrentPage] = useState('home');
   const [characters, setCharacters] = useState([]);
   const { loading: authLoading } = useAuth();
@@ -507,10 +507,16 @@ const App = () => {
   };
 
   return (
+    <div className="App">
+      {renderPage()}
+    </div>
+  );
+};
+
+const App = () => {
+  return (
     <AuthProvider>
-      <div className="App">
-        {renderPage()}
-      </div>
+      <AppContent />
     </AuthProvider>
   );
 };
