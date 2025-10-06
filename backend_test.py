@@ -122,7 +122,7 @@ class TouhouAPITester:
                 response = self.session.get(f"{API_BASE}/characters/{char_id}")
                 if response.status_code == 200:
                     character = response.json()
-                    required_fields = ["id", "name", "title", "description", "long_description", "color_scheme", "abilities", "species", "residence", "theme_song"]
+                    required_fields = ["_id", "name", "title", "description", "long_description", "color_scheme", "abilities", "species", "residence", "theme_song"]
                     
                     missing_fields = [field for field in required_fields if field not in character]
                     if not missing_fields:
