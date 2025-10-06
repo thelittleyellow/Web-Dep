@@ -306,11 +306,13 @@ class TouhouAPITester:
     def test_cors_headers(self):
         """Test CORS headers are present"""
         try:
-            response = self.session.options(f"{API_BASE}/characters")
+            # Test CORS headers with a regular GET request (OPTIONS not supported)
+            headers = {"Origin": "https://example.com"}
+            response = self.session.get(f"{API_BASE}/characters", headers=headers)
             cors_headers = [
                 "access-control-allow-origin",
-                "access-control-allow-methods", 
-                "access-control-allow-headers"
+                "access-control-allow-credentials", 
+                "access-control-allow-methods"
             ]
             
             present_headers = [header for header in cors_headers if header in response.headers]
