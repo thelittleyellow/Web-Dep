@@ -91,8 +91,8 @@ class TouhouAPITester:
                     missing_chars = [char_id for char_id in EXPECTED_CHARACTERS if char_id not in character_ids]
                     
                     if not missing_chars:
-                        # Verify character structure
-                        required_fields = ["id", "name", "title", "description", "color_scheme", "abilities"]
+                        # Verify character structure (MongoDB uses _id instead of id)
+                        required_fields = ["_id", "name", "title", "description", "color_scheme", "abilities"]
                         for char in characters:
                             for field in required_fields:
                                 if field not in char:
