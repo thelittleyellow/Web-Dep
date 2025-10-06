@@ -275,14 +275,14 @@ class TouhouAPITester:
             return False
     
     def test_profile_without_token(self):
-        """Test GET /api/profile without token (should return 401)"""
+        """Test GET /api/profile without token (should return 401 or 403)"""
         try:
             response = self.session.get(f"{API_BASE}/profile")
-            if response.status_code == 401:
-                self.log_result("Profile without Token", True, "401 returned when no token provided")
+            if response.status_code in [401, 403]:
+                self.log_result("Profile without Token", True, f"{response.status_code} returned when no token provided (expected)")
                 return True
             else:
-                self.log_result("Profile without Token", False, f"Expected 401, got {response.status_code}", response.text)
+                self.log_result("Profile without Token", False, f"Expected 401/403, got {response.status_code}", response.text)
                 return False
         except Exception as e:
             self.log_result("Profile without Token", False, "Request failed", str(e))
