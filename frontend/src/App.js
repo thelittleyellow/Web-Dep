@@ -125,7 +125,7 @@ const CharacterCarousel = ({ characters, selectedCharacter, onCharacterSelect })
       <div className="p-4">
         {characters.map((character) => (
           <div
-            key={character.id}
+            key={character.id || character._id}
             className={`mb-4 cursor-pointer transition-all duration-300 ${
               selectedCharacter?.id === character.id
                 ? 'scale-105 ring-2 ring-red-500'
