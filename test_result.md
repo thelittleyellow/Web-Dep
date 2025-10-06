@@ -231,10 +231,7 @@ metadata:
 
 test_plan:
   current_focus:
-    - "User authentication system"
-    - "User profile endpoint"
     - "Authentication integration"
-    - "Character API endpoints"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
